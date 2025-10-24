@@ -8,25 +8,35 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #1d1d1d;
 }
 
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: rgb(239, 248, 255);
+  background-color: #121212;
+  font-size: clamp(14px, 1vw, 18px);
+}
+
+@mixin flex-column($gap: 0rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+section {
+  max-width: 2000px;
 }
 
 main {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  @include flex-column(0rem);
+  align-items: center;
 
   section {
     width: 100%;
-    display: flex;
-    flex-direction: column;
     padding: 1rem;
+    @include flex-column(1rem);
 
     .top {
       width: 100%;
@@ -38,7 +48,65 @@ main {
     }
 
     .bottom {
-      background-color: #292222a9;
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+      @include flex-column(1.5rem);
+
+      .text {
+        @include flex-column(0.7rem);
+
+        h1 {
+          font-weight: 200;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+        }
+        p {
+          opacity: 0.7;
+          font-weight: 300;
+          font-size: 1.3rem;
+          line-height: 1.5;
+        }
+        button {
+          width: fit-content;
+          border: none;
+          outline: none;
+          padding: 0.7rem 1rem;
+          border-radius: 0.5rem;
+          font-weight: 800;
+        }
+      }
     }
-  }   
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    section {
+      flex-direction: row;
+      padding: 1rem 1rem;
+      .top,
+      .bottom {
+        width: 50%;
+      }
+
+      .bottom {
+        justify-content: space-between;
+        padding: 3rem;
+
+        .text {
+          gap: 1.5rem;
+
+          h1 {
+            font-size: 3rem;
+            font-weight: 400;
+          }
+
+          p {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
 }
