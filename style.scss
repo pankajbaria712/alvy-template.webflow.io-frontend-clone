@@ -33,7 +33,7 @@ main {
   @include flex-column(0rem);
   align-items: center;
 
-  section {
+  #section-01 {
     width: 100%;
     padding: 1rem;
     @include flex-column(1rem);
@@ -78,11 +78,45 @@ main {
       }
     }
   }
+
+  #section-02 {
+    width: 100%;
+    @include flex-column(2.5rem);
+    align-items: center;
+    padding: 1rem;
+
+    .top,
+    .bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      .element {
+        @include flex-column(0rem);
+        align-items: center;
+
+        h2 {
+          font-size: 3rem;
+          font-weight: 400;
+        }
+        small {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  #section-03 {
+    width: 100%;
+    @include flex-column(2.5rem);
+    align-items: center;
+    padding: 1rem;
+  }
 }
 
 @media (min-width: 900px) {
   main {
-    section {
+    #section-01 {
       flex-direction: row;
       padding: 1rem 1rem;
       .top,
@@ -107,6 +141,14 @@ main {
           }
         }
       }
+    }
+
+    #section-02 {
+      flex-direction: row;
+    }
+
+    #section-03 {
+      flex-direction: row;
     }
   }
 }
