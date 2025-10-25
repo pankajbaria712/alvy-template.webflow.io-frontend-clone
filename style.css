@@ -28,21 +28,21 @@ main {
   gap: 0rem;
   align-items: center;
 }
-main #section-01 {
+main .section-01 {
   width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main #section-01 .top {
+main .section-01 .top {
   width: 100%;
 }
-main #section-01 .top img {
+main .section-01 .top img {
   width: 100%;
   border-radius: 10px;
 }
-main #section-01 .bottom {
+main .section-01 .bottom {
   background-color: #1e1e1e;
   padding: 1rem;
   border-radius: 10px;
@@ -50,23 +50,23 @@ main #section-01 .bottom {
   flex-direction: column;
   gap: 1.5rem;
 }
-main #section-01 .bottom .text {
+main .section-01 .bottom .text {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 }
-main #section-01 .bottom .text h1 {
+main .section-01 .bottom .text h1 {
   font-weight: 200;
   font-size: 2.5rem;
   text-transform: uppercase;
 }
-main #section-01 .bottom .text p {
+main .section-01 .bottom .text p {
   opacity: 0.7;
   font-weight: 300;
   font-size: 1.3rem;
   line-height: 1.5;
 }
-main #section-01 .bottom .text button {
+main .section-01 .bottom .text button {
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -75,7 +75,7 @@ main #section-01 .bottom .text button {
   border-radius: 0.5rem;
   font-weight: 800;
 }
-main #section-02 {
+main .section-02 {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -83,64 +83,117 @@ main #section-02 {
   align-items: center;
   padding: 1rem;
 }
-main #section-02 .top,
-main #section-02 .bottom {
+main .section-02 .top,
+main .section-02 .bottom {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-main #section-02 .top .element,
-main #section-02 .bottom .element {
+main .section-02 .top .element,
+main .section-02 .bottom .element {
   display: flex;
   flex-direction: column;
   gap: 0rem;
   align-items: center;
 }
-main #section-02 .top .element h2,
-main #section-02 .bottom .element h2 {
+main .section-02 .top .element h2,
+main .section-02 .bottom .element h2 {
   font-size: 3rem;
   font-weight: 400;
 }
-main #section-02 .top .element small,
-main #section-02 .bottom .element small {
+main .section-02 .top .element small,
+main .section-02 .bottom .element small {
   opacity: 0.6;
 }
-main #section-03 {
+main .section-03 {
   width: 100%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  align-items: center;
+  gap: 1rem;
+}
+main .section-03 .top {
+  width: 100%;
+}
+main .section-03 .top img {
+  width: 100%;
+  border-radius: 0.7rem;
+}
+main .section-03 .bottom {
+  background-color: #1e1e1e;
   padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main .section-03 .bottom .text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+main .section-03 .bottom .text h1 {
+  font-weight: 200;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+main .section-03 .bottom .text p {
+  opacity: 0.7;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 @media (min-width: 900px) {
-  main #section-01 {
+  main .section-01 {
     flex-direction: row;
     padding: 1rem 1rem;
   }
-  main #section-01 .top,
-  main #section-01 .bottom {
+  main .section-01 .top,
+  main .section-01 .bottom {
     width: 50%;
   }
-  main #section-01 .bottom {
+  main .section-01 .bottom {
     justify-content: space-between;
     padding: 3rem;
   }
-  main #section-01 .bottom .text {
+  main .section-01 .bottom .text {
     gap: 1.5rem;
   }
-  main #section-01 .bottom .text h1 {
+  main .section-01 .bottom .text h1 {
     font-size: 3rem;
     font-weight: 400;
   }
-  main #section-01 .bottom .text p {
+  main .section-01 .bottom .text p {
     width: 80%;
   }
-  main #section-02 {
+  main .section-02 {
     flex-direction: row;
   }
-  main #section-03 {
+  main .section-03 {
+    flex-direction: row-reverse;
+    padding: 1rem;
+  }
+  main .section-03 .top,
+  main .section-03 .bottom {
+    width: 50%;
+  }
+  main .section-03 .bottom {
+    justify-content: space-between;
+    padding: 3rem;
+  }
+  main .section-03 .bottom .text {
+    gap: 1.5rem;
+  }
+  main .section-03 .bottom .text h1 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  main .section-03 .bottom .text .paragraphs {
+    display: flex;
+    gap: 1.5rem;
+  }
+  main #sec-04 {
     flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */
