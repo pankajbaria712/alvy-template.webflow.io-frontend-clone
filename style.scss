@@ -198,8 +198,18 @@ main {
 
   #sec-06 {
     .bottom {
+      gap: 5rem;
+
+      div {
+        @include flex-column(1.2rem);
+        h1 {
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 2.5rem;
+        }
+      }
       button {
-        @include button();
+        @include button(white);
       }
     }
   }
@@ -271,6 +281,16 @@ main {
 
     .section-05 {
       flex-direction: row;
+    }
+
+    #sec-06 {
+      .bottom {
+        div {
+          h1 {
+            font-size: 3rem;
+          }
+        }
+      }
     }
   }
 }

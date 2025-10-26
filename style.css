@@ -192,6 +192,19 @@ main .section-05 .card .bottom p {
   font-size: 1.2rem;
   font-weight: 600;
 }
+main #sec-06 .bottom {
+  gap: 5rem;
+}
+main #sec-06 .bottom div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+main #sec-06 .bottom div h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
 main #sec-06 .bottom button {
   width: -moz-fit-content;
   width: fit-content;
@@ -257,5 +270,8 @@ main #sec-06 .bottom button {
   }
   main .section-05 {
     flex-direction: row;
+  }
+  main #sec-06 .bottom div h1 {
+    font-size: 3rem;
   }
 }/*# sourceMappingURL=style.css.map */
