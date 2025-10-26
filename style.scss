@@ -24,6 +24,16 @@ html {
   gap: $gap;
 }
 
+@mixin button($bgcolor: white) {
+  width: fit-content;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  background-color: $bgcolor;
+}
+
 section {
   max-width: 2000px;
 }
@@ -68,12 +78,7 @@ main {
           line-height: 1.5;
         }
         button {
-          width: fit-content;
-          border: none;
-          outline: none;
-          padding: 0.7rem 1rem;
-          border-radius: 0.5rem;
-          font-weight: 800;
+          @include button();
         }
       }
     }
@@ -141,6 +146,63 @@ main {
       }
     }
   }
+
+  .section-05 {
+    @include flex-column(1rem);
+    padding: 1rem;
+    width: 100%;
+
+    .card {
+      background-image: url(./images/63d2ccbd2e12fa747e999689_team-02.webp);
+      width: 100%;
+      aspect-ratio: 1/1;
+      background-size: cover;
+      border-radius: 0.7rem;
+
+      @include flex-column(0rem);
+      justify-content: space-between;
+      padding: 1rem;
+
+      .icon,
+      .bottom {
+        background-color: rgb(187, 187, 187, 0.374);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgb(192, 189, 189);
+        border-radius: 0.7rem;
+        padding: 0.5rem;
+      }
+
+      .top {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        .icon {
+          width: fit-content;
+          border-radius: 50%;
+          padding: 1rem;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 1rem;
+
+        p {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  #sec-06 {
+    .bottom {
+      button {
+        @include button();
+      }
+    }
+  }
 }
 
 @media (min-width: 900px) {
@@ -204,6 +266,10 @@ main {
     }
 
     #sec-04 {
+      flex-direction: row;
+    }
+
+    .section-05 {
       flex-direction: row;
     }
   }
