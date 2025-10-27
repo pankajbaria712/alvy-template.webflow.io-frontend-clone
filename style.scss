@@ -30,7 +30,7 @@ html {
   outline: none;
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
-  font-weight: 800;
+  font-weight: 600;
   background-color: $bgcolor;
 }
 
@@ -213,6 +213,35 @@ main {
       }
     }
   }
+
+  .section-07 {
+    width: 98%;
+    padding: 1.2rem;
+    border-radius: 0.7rem;
+    background-color: #cebd63;
+
+    .top {
+      p {
+        font-weight: 500;
+        color: #121212;
+      }
+    }
+    .bottom {
+      h1 {
+        width: 90%;
+        text-transform: uppercase;
+        font-size: 2.9rem;
+        color: black;
+        font-weight: 400;
+        padding-bottom: 1rem;
+      }
+      button {
+        @include button(black);
+        color: white;
+        padding: 1rem 12rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 900px) {
@@ -289,6 +318,33 @@ main {
           h1 {
             font-size: 3rem;
           }
+        }
+      }
+    }
+
+    .section-07 {
+      padding: 2.5rem 2rem;
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        h1 {
+          width: 80%;
+          font-size: 4.5rem;
+          font-weight: 300;
+        }
+
+        button {
+          position: absolute;
+          backdrop-filter: none;
+          color: #f4f2ed;
+          background-color: #121212;
+          border-width: 1px;
+          border-color: transparent;
+          top: 63%;
+          left: 85%;
+          padding: 1.1rem 3.1rem;
         }
       }
     }

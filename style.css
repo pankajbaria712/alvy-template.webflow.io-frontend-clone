@@ -73,7 +73,7 @@ main .section-01 .bottom .text button {
   outline: none;
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
-  font-weight: 800;
+  font-weight: 600;
   background-color: white;
 }
 main .section-02 {
@@ -212,8 +212,38 @@ main #sec-06 .bottom button {
   outline: none;
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
-  font-weight: 800;
+  font-weight: 600;
   background-color: white;
+}
+main .section-07 {
+  width: 98%;
+  padding: 1.2rem;
+  border-radius: 0.7rem;
+  background-color: #cebd63;
+}
+main .section-07 .top p {
+  font-weight: 500;
+  color: #121212;
+}
+main .section-07 .bottom h1 {
+  width: 90%;
+  text-transform: uppercase;
+  font-size: 2.9rem;
+  color: black;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+main .section-07 .bottom button {
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+  padding: 1rem 12rem;
 }
 
 @media (min-width: 900px) {
@@ -273,5 +303,30 @@ main #sec-06 .bottom button {
   }
   main #sec-06 .bottom div h1 {
     font-size: 3rem;
+  }
+  main .section-07 {
+    padding: 2.5rem 2rem;
+  }
+  main .section-07 .bottom {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  main .section-07 .bottom h1 {
+    width: 80%;
+    font-size: 4.5rem;
+    font-weight: 300;
+  }
+  main .section-07 .bottom button {
+    position: absolute;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    color: #f4f2ed;
+    background-color: #121212;
+    border-width: 1px;
+    border-color: transparent;
+    top: 63%;
+    left: 85%;
+    padding: 1.1rem 3.1rem;
   }
 }/*# sourceMappingURL=style.css.map */
