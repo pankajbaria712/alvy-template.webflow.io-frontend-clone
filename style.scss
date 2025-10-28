@@ -1,3 +1,8 @@
+/* ===========================================
+   FILE: styles.scss
+   DESC: Fixed padding inconsistency (1rem everywhere)
+   =========================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +23,7 @@ html {
   font-size: clamp(14px, 1vw, 18px);
 }
 
+/* Utility mixins */
 @mixin flex-column($gap: 0rem) {
   display: flex;
   flex-direction: column;
@@ -34,221 +40,244 @@ html {
   background-color: $bgcolor;
 }
 
+/* Base Section Layout */
 section {
+  width: 100%;
   max-width: 2000px;
+  padding: 1rem; // unified padding for all sections
 }
 
+/* Main Wrapper */
 main {
   width: 100%;
-  @include flex-column(0rem);
+  @include flex-column(1rem);
   align-items: center;
+  /* padding removed to prevent double spacing */
+}
 
-  .section-01 {
+/* ========== SECTION 01 ========== */
+.section-01 {
+  @include flex-column(1rem);
+
+  .top {
     width: 100%;
-    padding: 1rem;
-    @include flex-column(1rem);
 
-    .top {
+    img {
       width: 100%;
-
-      img {
-        width: 100%;
-        border-radius: 10px;
-      }
-    }
-
-    .bottom {
-      background-color: #1e1e1e;
-      padding: 1rem;
       border-radius: 10px;
-      @include flex-column(1.5rem);
-
-      .text {
-        @include flex-column(0.7rem);
-
-        h1 {
-          font-weight: 200;
-          font-size: 2.5rem;
-          text-transform: uppercase;
-        }
-        p {
-          opacity: 0.7;
-          font-weight: 300;
-          font-size: 1.3rem;
-          line-height: 1.5;
-        }
-        button {
-          @include button();
-        }
-      }
     }
   }
 
-  .section-02 {
-    width: 100%;
-    @include flex-column(2.5rem);
-    align-items: center;
+  .bottom {
+    background-color: #1e1e1e;
     padding: 1rem;
+    border-radius: 10px;
+    @include flex-column(1.5rem);
 
-    .top,
-    .bottom {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
+    .text {
+      @include flex-column(0.7rem);
 
-      .element {
-        @include flex-column(0rem);
-        align-items: center;
-
-        h2 {
-          font-size: 3rem;
-          font-weight: 400;
-        }
-        small {
-          opacity: 0.6;
-        }
-      }
-    }
-  }
-
-  .section-03 {
-    width: 100%;
-    padding: 1rem;
-    @include flex-column(1rem);
-
-    .top {
-      width: 100%;
-      img {
-        width: 100%;
-        border-radius: 0.7rem;
-      }
-    }
-    .bottom {
-      background-color: #1e1e1e;
-      padding: 1rem;
-      border-radius: 10px;
-      @include flex-column(1.5rem);
-
-      .text {
-        @include flex-column(0.7rem);
-
-        h1 {
-          font-weight: 200;
-          font-size: 2.5rem;
-          text-transform: uppercase;
-        }
-        p {
-          opacity: 0.7;
-          font-weight: 300;
-          font-size: 1.1rem;
-          line-height: 1.5;
-        }
-      }
-    }
-  }
-
-  .section-05 {
-    @include flex-column(1rem);
-    padding: 1rem;
-    width: 100%;
-
-    .card {
-      background-image: url(./images/63d2ccbd2e12fa747e999689_team-02.webp);
-      width: 100%;
-      aspect-ratio: 1/1;
-      background-size: cover;
-      border-radius: 0.7rem;
-
-      @include flex-column(0rem);
-      justify-content: space-between;
-      padding: 1rem;
-
-      .icon,
-      .bottom {
-        background-color: rgb(187, 187, 187, 0.374);
-        backdrop-filter: blur(18px);
-        border: 1px solid rgb(192, 189, 189);
-        border-radius: 0.7rem;
-        padding: 0.5rem;
-      }
-
-      .top {
-        display: flex;
-        justify-content: flex-end;
-        gap: 1rem;
-        .icon {
-          width: fit-content;
-          border-radius: 50%;
-          padding: 1rem;
-        }
-      }
-
-      .bottom {
-        display: flex;
-        justify-content: space-between;
-        padding: 1.5rem 1rem;
-
-        p {
-          font-size: 1.2rem;
-          font-weight: 600;
-        }
-      }
-    }
-  }
-
-  #sec-06 {
-    .bottom {
-      gap: 5rem;
-
-      div {
-        @include flex-column(1.2rem);
-        h1 {
-          text-transform: uppercase;
-          font-weight: 400;
-          font-size: 2.5rem;
-        }
-      }
-      button {
-        @include button(white);
-      }
-    }
-  }
-
-  .section-07 {
-    width: 98%;
-    padding: 1.2rem;
-    border-radius: 0.7rem;
-    background-color: #cebd63;
-
-    .top {
-      p {
-        font-weight: 500;
-        color: #121212;
-      }
-    }
-    .bottom {
       h1 {
-        width: 90%;
+        font-weight: 200;
+        font-size: 2.5rem;
         text-transform: uppercase;
-        font-size: 2.9rem;
-        color: black;
-        font-weight: 400;
-        padding-bottom: 1rem;
+      }
+      p {
+        opacity: 0.7;
+        font-weight: 300;
+        font-size: 1.3rem;
+        line-height: 1.5;
       }
       button {
-        @include button(black);
-        color: white;
-        padding: 1rem 12rem;
+        @include button();
       }
     }
   }
 }
 
+/* ========== SECTION 02 ========== */
+.section-02 {
+  @include flex-column(2.5rem);
+  align-items: center;
+
+  .top,
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .element {
+      @include flex-column(0rem);
+      align-items: center;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+      small {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+/* ========== SECTION 03 ========== */
+.section-03 {
+  @include flex-column(1rem);
+
+  .top {
+    width: 100%;
+    img {
+      width: 100%;
+      border-radius: 0.7rem;
+    }
+  }
+
+  .bottom {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 10px;
+    @include flex-column(1.5rem);
+
+    .text {
+      @include flex-column(0.7rem);
+
+      h1 {
+        font-weight: 200;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+      }
+      p {
+        opacity: 0.7;
+        font-weight: 300;
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+/* ========== SECTION 05 ========== */
+.section-05 {
+  @include flex-column(1rem);
+
+  .card {
+    background-image: url(./images/63d2ccbd2e12fa747e999689_team-02.webp);
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    border-radius: 0.7rem;
+
+    @include flex-column(0rem);
+    justify-content: space-between;
+    padding: 1rem;
+
+    .icon,
+    .bottom {
+      background-color: rgba(187, 187, 187, 0.374);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgb(192, 189, 189);
+      border-radius: 0.7rem;
+      padding: 0.5rem;
+    }
+
+    .top {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+
+      .icon {
+        width: fit-content;
+        border-radius: 50%;
+        padding: 1rem;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 1rem;
+
+      p {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* ========== SECTION 06 ========== */
+#sec-06 {
+  .bottom {
+    gap: 5rem;
+
+    div {
+      @include flex-column(1.2rem);
+      h1 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.5rem;
+      }
+    }
+    button {
+      @include button(white);
+    }
+  }
+}
+
+/* ========== SECTION 07 ========== */
+.section-07 {
+  @include flex-column(1rem);
+  background-color: #cebd63;
+
+  .top {
+    p {
+      font-weight: 500;
+      color: #121212;
+    }
+  }
+
+  .bottom {
+    h1 {
+      width: 90%;
+      text-transform: uppercase;
+      font-size: 2.9rem;
+      color: black;
+      font-weight: 400;
+      padding-bottom: 1rem;
+    }
+
+    button {
+      @include button(black);
+      color: white;
+      padding: 1rem 12rem;
+    }
+  }
+}
+
+/* ========== SECTION 08 ========== */
+.section-08 {
+  .top {
+    @include flex-column(6rem);
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 0.7rem;
+  }
+  .middle {
+    background-color: #cebd63;
+    height: 200px;
+  }
+  .bottom {
+    background-color: blueviolet;
+    height: 200px;
+  }
+}
+
+/* Responsive Adjustments */
 @media (min-width: 900px) {
   main {
     .section-01 {
       flex-direction: row;
-      padding: 1rem 1rem;
       .top,
       .bottom {
         width: 50%;
@@ -279,7 +308,7 @@ main {
 
     .section-03 {
       flex-direction: row-reverse;
-      padding: 1rem;
+
       .top,
       .bottom {
         width: 50%;
@@ -296,6 +325,7 @@ main {
             font-size: 3rem;
             font-weight: 400;
           }
+
           .paragraphs {
             display: flex;
             gap: 1.5rem;

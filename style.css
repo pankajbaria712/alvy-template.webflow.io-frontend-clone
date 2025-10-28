@@ -1,3 +1,7 @@
+/* ===========================================
+   FILE: styles.scss
+   DESC: Fixed padding inconsistency (1rem everywhere)
+   =========================================== */
 * {
   margin: 0;
   padding: 0;
@@ -17,32 +21,38 @@ html {
   font-size: clamp(14px, 1vw, 18px);
 }
 
+/* Utility mixins */
+/* Base Section Layout */
 section {
+  width: 100%;
   max-width: 2000px;
+  padding: 1rem;
 }
 
+/* Main Wrapper */
 main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0rem;
+  gap: 1rem;
   align-items: center;
+  /* padding removed to prevent double spacing */
 }
-main .section-01 {
-  width: 100%;
-  padding: 1rem;
+
+/* ========== SECTION 01 ========== */
+.section-01 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main .section-01 .top {
+.section-01 .top {
   width: 100%;
 }
-main .section-01 .top img {
+.section-01 .top img {
   width: 100%;
   border-radius: 10px;
 }
-main .section-01 .bottom {
+.section-01 .bottom {
   background-color: #1e1e1e;
   padding: 1rem;
   border-radius: 10px;
@@ -50,23 +60,23 @@ main .section-01 .bottom {
   flex-direction: column;
   gap: 1.5rem;
 }
-main .section-01 .bottom .text {
+.section-01 .bottom .text {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 }
-main .section-01 .bottom .text h1 {
+.section-01 .bottom .text h1 {
   font-weight: 200;
   font-size: 2.5rem;
   text-transform: uppercase;
 }
-main .section-01 .bottom .text p {
+.section-01 .bottom .text p {
   opacity: 0.7;
   font-weight: 300;
   font-size: 1.3rem;
   line-height: 1.5;
 }
-main .section-01 .bottom .text button {
+.section-01 .bottom .text button {
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -76,51 +86,51 @@ main .section-01 .bottom .text button {
   font-weight: 600;
   background-color: white;
 }
-main .section-02 {
-  width: 100%;
+
+/* ========== SECTION 02 ========== */
+.section-02 {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   align-items: center;
-  padding: 1rem;
 }
-main .section-02 .top,
-main .section-02 .bottom {
+.section-02 .top,
+.section-02 .bottom {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-main .section-02 .top .element,
-main .section-02 .bottom .element {
+.section-02 .top .element,
+.section-02 .bottom .element {
   display: flex;
   flex-direction: column;
   gap: 0rem;
   align-items: center;
 }
-main .section-02 .top .element h2,
-main .section-02 .bottom .element h2 {
+.section-02 .top .element h2,
+.section-02 .bottom .element h2 {
   font-size: 3rem;
   font-weight: 400;
 }
-main .section-02 .top .element small,
-main .section-02 .bottom .element small {
+.section-02 .top .element small,
+.section-02 .bottom .element small {
   opacity: 0.6;
 }
-main .section-03 {
-  width: 100%;
-  padding: 1rem;
+
+/* ========== SECTION 03 ========== */
+.section-03 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main .section-03 .top {
+.section-03 .top {
   width: 100%;
 }
-main .section-03 .top img {
+.section-03 .top img {
   width: 100%;
   border-radius: 0.7rem;
 }
-main .section-03 .bottom {
+.section-03 .bottom {
   background-color: #1e1e1e;
   padding: 1rem;
   border-radius: 10px;
@@ -128,30 +138,30 @@ main .section-03 .bottom {
   flex-direction: column;
   gap: 1.5rem;
 }
-main .section-03 .bottom .text {
+.section-03 .bottom .text {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 }
-main .section-03 .bottom .text h1 {
+.section-03 .bottom .text h1 {
   font-weight: 200;
   font-size: 2.5rem;
   text-transform: uppercase;
 }
-main .section-03 .bottom .text p {
+.section-03 .bottom .text p {
   opacity: 0.7;
   font-weight: 300;
   font-size: 1.1rem;
   line-height: 1.5;
 }
-main .section-05 {
+
+/* ========== SECTION 05 ========== */
+.section-05 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
-  width: 100%;
 }
-main .section-05 .card {
+.section-05 .card {
   background-image: url(./images/63d2ccbd2e12fa747e999689_team-02.webp);
   width: 100%;
   aspect-ratio: 1/1;
@@ -163,8 +173,8 @@ main .section-05 .card {
   justify-content: space-between;
   padding: 1rem;
 }
-main .section-05 .card .icon,
-main .section-05 .card .bottom {
+.section-05 .card .icon,
+.section-05 .card .bottom {
   background-color: rgba(187, 187, 187, 0.374);
   -webkit-backdrop-filter: blur(18px);
           backdrop-filter: blur(18px);
@@ -172,40 +182,42 @@ main .section-05 .card .bottom {
   border-radius: 0.7rem;
   padding: 0.5rem;
 }
-main .section-05 .card .top {
+.section-05 .card .top {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
 }
-main .section-05 .card .top .icon {
+.section-05 .card .top .icon {
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50%;
   padding: 1rem;
 }
-main .section-05 .card .bottom {
+.section-05 .card .bottom {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 1rem;
 }
-main .section-05 .card .bottom p {
+.section-05 .card .bottom p {
   font-size: 1.2rem;
   font-weight: 600;
 }
-main #sec-06 .bottom {
+
+/* ========== SECTION 06 ========== */
+#sec-06 .bottom {
   gap: 5rem;
 }
-main #sec-06 .bottom div {
+#sec-06 .bottom div {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
-main #sec-06 .bottom div h1 {
+#sec-06 .bottom div h1 {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 2.5rem;
 }
-main #sec-06 .bottom button {
+#sec-06 .bottom button {
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -215,17 +227,19 @@ main #sec-06 .bottom button {
   font-weight: 600;
   background-color: white;
 }
-main .section-07 {
-  width: 98%;
-  padding: 1.2rem;
-  border-radius: 0.7rem;
+
+/* ========== SECTION 07 ========== */
+.section-07 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   background-color: #cebd63;
 }
-main .section-07 .top p {
+.section-07 .top p {
   font-weight: 500;
   color: #121212;
 }
-main .section-07 .bottom h1 {
+.section-07 .bottom h1 {
   width: 90%;
   text-transform: uppercase;
   font-size: 2.9rem;
@@ -233,7 +247,7 @@ main .section-07 .bottom h1 {
   font-weight: 400;
   padding-bottom: 1rem;
 }
-main .section-07 .bottom button {
+.section-07 .bottom button {
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -246,10 +260,28 @@ main .section-07 .bottom button {
   padding: 1rem 12rem;
 }
 
+/* ========== SECTION 08 ========== */
+.section-08 .top {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 0.7rem;
+}
+.section-08 .middle {
+  background-color: #cebd63;
+  height: 200px;
+}
+.section-08 .bottom {
+  background-color: blueviolet;
+  height: 200px;
+}
+
+/* Responsive Adjustments */
 @media (min-width: 900px) {
   main .section-01 {
     flex-direction: row;
-    padding: 1rem 1rem;
   }
   main .section-01 .top,
   main .section-01 .bottom {
@@ -274,7 +306,6 @@ main .section-07 .bottom button {
   }
   main .section-03 {
     flex-direction: row-reverse;
-    padding: 1rem;
   }
   main .section-03 .top,
   main .section-03 .bottom {
