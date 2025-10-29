@@ -225,7 +225,7 @@ main {
   }
 }
 
-/* ========== SECTION 07 ========== */
+/* ------------- SECTION 07 -------------- */
 .section-07 {
   @include flex-column(1rem);
   background-color: #cebd63;
@@ -255,7 +255,7 @@ main {
   }
 }
 
-/* ========== SECTION 08 ========== */
+/* ------------- SECTION 08 ------------ */
 .section-08 {
   .top {
     @include flex-column(6rem);
